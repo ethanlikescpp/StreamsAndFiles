@@ -6,6 +6,7 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -37,14 +38,109 @@ void filewrite();
 void fileread();
 void tempwrite();
 void tempread();
+void somestrings();
+void setgetstrings();
+void createstream();
+void extractstream();
+void readwriteonly();
+void widthchars();
 
+/*
 int main() {
-	
+	widthchars();
 
     return 0;
 }
+*/
 
+void widthchars() {
+	wstringstream stream;
 
+	stream << "Jane" << " " << 42 << " " << 15000 << endl;
+	wstring formattedString = stream.str();
+
+	wstring name;
+	int age;
+	double salary;
+	stream >> name >> age >> salary;
+
+	wcout << "Name: " << endl;
+	wcout << "Age: " << age << endl;
+	wcout << "Salary: " << salary << endl;
+
+}
+
+void readwriteonly() {
+	ostringstream stream1; // Write only
+	stream1 << "Jane " << 42 << " " << 15000 << endl;
+
+	istringstream stream2(stream1.str()); // Read only
+
+	string name;
+	int age;
+	double salary;
+	stream2 >> name >> age >> salary;
+
+	cout << "Name: " << name << endl;
+	cout << "Age: " << age << endl;
+	cout << "Salary: $" << salary << endl;
+}
+
+void extractstream() {
+	string str = "Jane 42 15000";
+	stringstream stream(str);
+
+	string name;
+	int age;
+	double salary;
+	stream >> name >> age >> salary;
+
+	cout << "Name: " << name << endl;
+	cout << "Age: " << age << endl;
+	cout << "Salary: " << salary << endl;
+}
+
+void createstream() {
+	string str = "**********************";
+	stringstream stream(str);
+
+	stream << "Jane" << " " << 42 << " " << 15000;
+	cout << stream.str() << endl;
+
+}
+
+void setgetstrings() {
+	stringstream stream;
+
+	stream.str("Jane 42 15000");
+
+	cout << "Contents of the stream: " << stream.str() << endl;
+
+	string name;
+	int age;
+	double salary;
+	stream >> name >> age >> salary;
+
+	cout << "Name: " << name << endl;
+	cout << "Age: " << age << endl;
+	cout << "Salary: " << salary << endl;
+	
+}
+
+void somestrings() {
+	stringstream stream;
+	string name;
+	int age;
+	double salary;
+
+	stream << "Jane " << 42 << " " << 150000 << endl;
+
+	stream >> name >> age >> salary;
+
+	cout << "Name: " << name << endl;
+	cout << "Age: " << age << endl;
+	cout << "Salary: " << salary << endl;
+}
 
 void tempread() {
 	ifstream ifile("file3.txt", ios_base::binary);
