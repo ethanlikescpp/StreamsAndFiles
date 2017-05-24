@@ -19,6 +19,12 @@
     <Text Include="file1.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="file2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="file3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">

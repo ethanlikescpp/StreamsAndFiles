@@ -136,6 +136,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="file1.txt" />
+    <Text Include="file2.txt" />
+    <Text Include="file3.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
