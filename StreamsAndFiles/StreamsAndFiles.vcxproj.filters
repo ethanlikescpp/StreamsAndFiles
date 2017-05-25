@@ -25,6 +25,9 @@
     <Text Include="file3.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="donation_total.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
